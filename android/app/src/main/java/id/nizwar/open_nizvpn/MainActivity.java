@@ -60,6 +60,7 @@ public class MainActivity extends FlutterActivity {
             username = "",
             password = "",
             name = "",
+            priKeyPasswd = "",
             dns1 = VpnProfile.DEFAULT_DNS1,
             dns2 = VpnProfile.DEFAULT_DNS2;
 
@@ -168,7 +169,7 @@ public class MainActivity extends FlutterActivity {
                     name = call.argument("country");
                     username = call.argument("username");
                     password = call.argument("password");
-
+                    priKeyPasswd = call.argument("priKeyPasswd");
                     if (call.argument("dns1") != null) dns1 = call.argument("dns1");
                     if (call.argument("dns2") != null) dns2 = call.argument("dns2");
 
@@ -234,6 +235,7 @@ public class MainActivity extends FlutterActivity {
             vpnProfile.mProfileCreator = getPackageName();
             vpnProfile.mUsername = username;
             vpnProfile.mPassword = password;
+            vpnProfile.mPrivateKeyPasswd = priKeyPasswd;
             vpnProfile.mDNS1 = dns1;
             vpnProfile.mDNS2 = dns2;
 
